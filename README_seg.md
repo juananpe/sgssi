@@ -1,16 +1,16 @@
-# Seguridad Informática para Ingenieros
+# Seguridad Informática para Estudiantes de Ingeniería
 
 ## Perfil del Estudiante
 
-- Álex, 21 años, estudiante de cuarto curso del Grado en Ingeniería Informática.
-- Tiene conocimientos básicos de Python y lo ha utilizado para algunos proyectos académicos.
-- Está interesada en especializarse en ciberseguridad y quiere adquirir experiencia práctica en este campo.
-- Álex aprende mejor con un enfoque práctico y disfruta resolviendo problemas en equipo.
--------
 - Sandra, 22 años, estudiante de cuarto curso del Grado en Inteligencia Artificial.
 - Tiene sólidos conocimientos de Python y experiencia en el desarrollo de modelos de aprendizaje automático.
 - Está interesada en explorar la intersección entre la IA y la ciberseguridad, especialmente en la detección de amenazas y el análisis de patrones de ataque.
 - Sandra tiene un enfoque analítico y disfruta aplicando técnicas de IA a problemas del mundo real.
+-------
+- Álex, 21 años, estudiante de cuarto curso del Grado en Ingeniería Informática.
+- Tiene conocimientos básicos de Python y lo ha utilizado para algunos proyectos académicos.
+- Está interesada en especializarse en ciberseguridad y quiere adquirir experiencia práctica en este campo.
+- Álex aprende mejor con un enfoque práctico y disfruta resolviendo problemas en equipo.
 
 ## Programa
 
