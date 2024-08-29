@@ -12,7 +12,7 @@
 - Está interesada en especializarse en ciberseguridad y quiere adquirir experiencia práctica en este campo.
 - Álex aprende mejor con un enfoque práctico y disfruta resolviendo problemas en equipo.
 
-## Programa
+## Temario
 
 1. [Introducción](./01_intro/index.md)
 2. [Backups](./02_backups/index.md)
@@ -28,6 +28,7 @@
 
 ## Tecnologías y Herramientas
 
+- Backups: [Rsync][rsync]
 - Análisis de vulnerabilidades: [Nmap][nmap], [OpenVAS][openvas]
 - Seguridad en aplicaciones web: [OWASP ZAP][zap], [Burp Suite][burp]
 - Análisis de tráfico de red: [Wireshark][wireshark]
@@ -50,10 +51,11 @@ tipo Capture The Flag (CTF). Se fomenta el trabajo en equipo y el aprendizaje ba
 
 Para más detalles sobre la asignatura, consulta la [Guía Docente completa](./guia_docente.md).
 
+[Rsync]: https://rsync.samba.org/
 [Nmap]: https://nmap.org/
 [OpenVAS]: https://www.openvas.org/
-[OWASP ZAP]: https://www.zaproxy.org/
-[Burp Suite]: https://portswigger.net/burp
+[zap]: https://www.zaproxy.org/
+[Burp]: https://portswigger.net/burp
 [Wireshark]: https://www.wireshark.org/
 [OpenSSL]: https://www.openssl.org/
 [GPG]: https://gnupg.org/
