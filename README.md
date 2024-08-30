@@ -1,5 +1,7 @@
 # Seguridad Informática para Estudiantes de Ingeniería
 
+<img src="./static/cs.jpg" alt="An abstract design featuring various interconnected geometric shapes and symbols on a light lavender background. It should remind us something related to computer security. The primary colors used are dark green, deep purple, and bright orange, with the shapes varying in size and style, resembling a complex network or molecular diagram. aesthetically pleasing arrangement. By Google Imagen3" style="width: 80%">
+
 ## Perfil del Estudiante
 
 - Sandra, 22 años, estudiante de cuarto curso del Grado en Inteligencia Artificial.
