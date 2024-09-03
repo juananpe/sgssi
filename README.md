@@ -41,9 +41,9 @@
 - Ingeniería inversa: [Ghidra][ghidra]
 - Decompilación de Java: [jd-gui][jd-gui]
 - Auditorías / Exploits: [Metasploit][metasploit]
-- Análisis de malware: [VirusTotal][virus_total], [Any.Run][any_run]
+- Análisis de malware: [Virus Total][VirusTotal], [Any.Run][Any.Run]
 - Inyección de SQL: [sqlmap][sqlmap]
-- Auditorías / Crackeo de contraseñas: [JohnTheRipper][john_the_ripper]
+- Auditorías / Crackeo de contraseñas: [JohnTheRipper][JohnTheRipper]
 
 ## Metodología
 
