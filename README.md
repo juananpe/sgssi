@@ -38,6 +38,12 @@
 - Sistemas de detección de intrusos: [Suricata][suricata]
 - Análisis forense: [Autopsy][autopsy], [Volatility][volatility]
 - Entornos de pruebas: [VirtualBox][virtualbox], [Docker][docker]
+- Ingeniería inversa: [Ghidra][ghidra]
+- Decompilación de Java: [jd-gui][jd-gui]
+- Auditorías / Exploits: [Metasploit][metasploit]
+- Análisis de malware: [VirusTotal][virus_total], [Any.Run][any_run]
+- Inyección de SQL: [sqlmap][sqlmap]
+- Auditorías / Crackeo de contraseñas: [JohnTheRipper][john_the_ripper]
 
 ## Metodología
 
