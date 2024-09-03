@@ -52,12 +52,11 @@ tipo Capture The Flag (CTF). Se fomenta el trabajo en equipo y el aprendizaje ba
 
 ## Evaluación
 
-- Prácticas de laboratorio: 30%
-- Proyectos en equipo: 25%
-- Exámenes teórico-prácticos: 25%
-- Presentaciones y participación: 20%
+- Prueba Escrita a Desarrollar: 15%
+- Prueba Tipo Test: 15%
+- Realización de Prácticas: Ejercicios, casos o problemas: 70%
 
-Para más detalles sobre la asignatura, consulta la [Guía Docente completa](./guia_docente.md).
+Para más detalles sobre la asignatura, consulta la [Guía Docente completa](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica/creditos-y-asignaturas?p_redirect=consultaAsignatura&p_cod_proceso=egr&p_anyo_acad=20240&p_ciclo=X&p_curso=4&p_cod_asignatura=26025).
 
 [Rsync]: https://rsync.samba.org
 [Nmap]: https://nmap.org
