@@ -50,13 +50,7 @@
 El curso combina clases teóricas con sesiones prácticas de laboratorio, resolución de casos reales y desafíos 
 tipo Capture The Flag (CTF). Se fomenta el trabajo en equipo y el aprendizaje basado en problemas.
 
-## Evaluación
-
-- Prueba Escrita a Desarrollar: 15%
-- Prueba Tipo Test: 15%
-- Realización de Prácticas: Ejercicios, casos o problemas: 70%
-
-Para más detalles sobre la asignatura, consulta la [Guía Docente completa](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica/creditos-y-asignaturas?p_redirect=consultaAsignatura&p_cod_proceso=egr&p_anyo_acad=20240&p_ciclo=X&p_curso=4&p_cod_asignatura=26025).
+Para más detalles sobre la asignatura o su evaluación, consulta la [Guía Docente completa](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica/creditos-y-asignaturas?p_redirect=consultaAsignatura&p_cod_proceso=egr&p_anyo_acad=20240&p_ciclo=X&p_curso=4&p_cod_asignatura=26025).
 
 [Rsync]: https://rsync.samba.org
 [Nmap]: https://nmap.org
