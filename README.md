@@ -53,16 +53,23 @@ tipo Capture The Flag (CTF). Se fomenta el trabajo en equipo y el aprendizaje ba
 
 Para más detalles sobre la asignatura, consulta la [Guía Docente completa](./guia_docente.md).
 
-[Rsync]: https://rsync.samba.org/
-[Nmap]: https://nmap.org/
-[OpenVAS]: https://www.openvas.org/
-[zap]: https://www.zaproxy.org/
+[Rsync]: https://rsync.samba.org
+[Nmap]: https://nmap.org
+[OpenVAS]: https://www.openvas.org
+[zap]: https://www.zaproxy.org
 [Burp]: https://portswigger.net/burp
-[Wireshark]: https://www.wireshark.org/
-[OpenSSL]: https://www.openssl.org/
-[GPG]: https://gnupg.org/
-[Suricata]: https://suricata-ids.org/
-[Autopsy]: https://www.autopsy.com/
-[Volatility]: https://www.volatilityfoundation.org/
-[VirtualBox]: https://www.virtualbox.org/
-[Docker]: https://www.docker.com/
+[Wireshark]: https://www.wireshark.org
+[OpenSSL]: https://www.openssl.org
+[GPG]: https://gnupg.org
+[Suricata]: https://suricata-ids.org
+[Autopsy]: https://www.autopsy.com
+[Volatility]: https://www.volatilityfoundation.org
+[VirtualBox]: https://www.virtualbox.org
+[Docker]: https://www.docker.com
+[Ghidra]: https://ghidra-sre.org
+[jd-gui]: https://java-decompiler.github.io
+[Metasploit]: https://www.metasploit.com
+[VirusTotal]: https://www.virustotal.com
+[Any.Run]: https://any.run
+[sqlmap]: https://sqlmap.org
+[JohnTheRipper]: https://www.openwall.com/john/

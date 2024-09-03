@@ -53,3 +53,7 @@ En criptografía, las funciones hash se usan para generar un "resumen" o "digest
 * **DES (Data Encryption Standard):** Un algoritmo de cifrado de clave secreta que utiliza una clave de 56 bits. Es vulnerable a ataques de fuerza bruta.
 * **AES (Advanced Encryption Standard):** El sucesor de DES, que utiliza claves más largas (128 bits o más).
 * **MD5 y SHA:** Algoritmos que implementan funciones hash.
+
+### Referencias
+
+- [NKU, Permutation Ciphers](https://www.nku.edu/~christensen/1402%20permutation%20ciphers.pdf)
