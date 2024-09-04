@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+    resize: none;
+}
+
+.alphabet {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alphabet div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+textarea::selection {
+    background-color: yellow;
+}
