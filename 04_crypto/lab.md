@@ -266,3 +266,97 @@ Te será de gran utilidad esta aplicación web: [CrackMono](./crackmono/public/i
 
 5.3 Desde el punto de vista de la seguridad, ¿qué sencilla recomendación a la hora de cifrar (sin cambiar el algoritmo de cifrado) haría que el criptoanálisis fuera bastante más complejo?
 
+6. Sustitución polialfabética. Cifrado Vigenère. 
+
+El cifrado Vigenère es un método de cifrado por sustitución polialfabética que utiliza una clave para encriptar y desencriptar un mensaje. Es una mejora del cifrado César, ya que usa múltiples alfabetos desplazados en lugar de uno solo.
+
+**Pasos para el cifrado Vigenère**
+
+1. Seleccionar el mensaje y la clave:
+   - Mensaje (texto claro): `ATAQUE AL AMANECER`
+   - Clave: `LEMON`
+
+2. Repetir la clave para que coincida con la longitud del mensaje:
+   - El mensaje tiene 16 caracteres (sin contar espacios)
+   - La clave "LEMON" se repite tantas veces como sea necesario para igualar la longitud del mensaje:
+     ```
+     LEMONLEMONLEMONL
+     ```
+
+3. **Convertir las letras a números:** (A = 0, B = 1, ..., Z = 25)
+   - Mensaje: `ATAQUEALAMANECER`
+     ```
+     A  T  A  Q  U  E  A  L  A   M  A   N  E  C  E  R
+     0  19 0 16 20  4  0 11  0  12  0  13  4  2  4  17
+     ```
+
+   - Clave: `LEMONLEMONLEMON`
+     ```
+     L  E  M  O  N  L E  M  O  N  L E  M  O  N  L 
+     11 4 12 14 13 11 4 12 14 13 11 4 12 14 13  11
+     ```
+
+4. **Suma los números del mensaje con los números de la clave (mod 26):**
+   ```
+      0  19  0  16  20  4   0  11   0  12   0  13   4   2  4  17
+   + 11  4  12  14  13  11  4  12  14  13  11   4  12  14  13 11
+   --------------------------------------------------------------
+     11  23 12  30  33  15  4  23   14 25  11  17  16  16 17  28
+   ```
+
+5. **Tomar el módulo 26 de cada suma:**
+   ```
+     11 23 12  4 7 15 4 23 14 25 11 17 16 16 17 2 
+   ```
+
+6. **Convertir estos números de nuevo a letras:**
+   ```
+     L  X  M  E  H  P  E  X  O  Z  L  R  Q  Q  R  C
+   ```
+
+   LXMEHP EX OZLRQQRC
+
+### Texto cifrado
+El mensaje cifrado utilizando el cifrado Vigenère con la clave "LEMON" es:
+**LXMEHPEXOZLRQQRC**
+
+Fíjate que la letra A del mensaje en claro (**ATAQUEALAMANECER**) aparece en el criptograma sustituida por distintas letras, dependiendo de la posición (una L, una M, una E y una una O). Ante esta situación no es viable un ataque por análisis de frecuencias... ¿o sí lo es?
+
+6.1 Desarrolla un script en python que implemente el cifrado Vigenère, con los siguiente parámetros (-m texto en plano, -k clave):
+
+```
+$ python vigenere.py -m "ATAQUE AL AMANECER" -k "LEMON"
+LXMEXPEXOZLRQQRC
+```
+
+**7. El método Kasiski (ataque criptográfico al cifrado Vigenère)** 
+
+El método Kasiski es un método de criptoanálisis (un ataque criptográfico) al cifrado de Vigenère (1586). Dicho método debe su nombre al oficial prusiano Friedrich Kasiski que lo publicó en 1863 (es decir, 277 años después).
+
+ Kasiski se dió cuenta de un curioso efecto en algunos criptogramas Vigenère, como este:
+
+```
+$ python vigenere.py -m "ATAQUE AL AMANECER XXXXATAQUE" -k "LEMON"
+LXMEHPEXOZLRQQRCBJLKLXMEHP
+```
+En el criptograma **LXMEHPE**XOZLRQQRCBJLK**LXMEHP**
+hay palabras repetidas, lo cual significa casi con toda probabilidad que dichas palabras no sólo eran la misma antes del cifrado sino que además la clave coincide en la misma posición en ambas ocurrencias.
+
+Sabiendo entonces que la distancia entre palabras repetidas (20 caracteres en el ejemplo) es múltiplo de la longitud de la clave (LEMON=5 caracteres en el ejemplo), era cuestión de buscar diferentes palabras que se repitieran y hallar su máximo común divisor, para de esta manera encontrar un múltiplo cercano a la longitud de la clave. La longitud de la clave será este número o algún factor primo del mismo.
+
+
+Veamos un ejemplo. En la imagen tenemos un criptograma cifrado con Vigenère:
+
+![alt text](image-1.png)
+
+Vemos una secuencia repetida de tres letras (BIY) (se ha seleccionado en el criptograma esa secuencia entre la primera BIY y la segunda BIY). La distancia es de 35 caracteres. Los factores primos son 5 y 7 (5x7=35). Podemos repetir el proceso con todas las repeticiones y vemos que la longitud de la clave que haría posible esas repeticiones muy probablemente sea 7 (la columna con más X)
+
+Si tomamos ahora las letras del criptograma de 7 en 7 (0, 7, 14, 21, 28, ...) sabemos que están cifradas con el mismo desplazamiento y por tanto es posible un ataque por análisis de frecuencia en esa secuencia de caracteres. Ídem si tomamos las letras de 7 en 7 pero empezando en la posición 1, 8, 15, 22, ... 
+
+La siguiente herramienta (Vigenère Cracking Tool) permite aplicar el método Kasiski de forma sencilla:
+
+https://www.simonsingh.net/The_Black_Chamber/vigenere_cracking_tool.html
+
+7.1 Usando la herramienta anterior, aplica el método Kasiski para romper el cifrado de este criptograma:
+
+RIKVBIYBITHUSEVAZMMLTKASRNHPNPZICSWDSVMBIYFQEZUBZPBRGYNTBURMBECZQKBMBPAWIXSOFNUZECNRAZFPHIYBQEOCTTIOXKUNOHMRGCNDDXZWIRDVDRZYAYYICPUYDHCKXQIECIEWUICJNNACSAZZZGACZHMRGXFTILFNNTSDAFGYWLNICFISEAMRMORPGMJLUSTAAKBFLTIBYXGAVDVXPCTSVVRLJENOWWFINZOWEHOSRMQDGYSDOPVXXGPJNRVILZNAREDUYBTVLIDLMSXKYEYVAKAYBPVTDHMTMGITDZRTIOVWQIECEYBNEDPZWKUNDOZRBAHEGQBXURFGMUECNPAIIYURLRIPTFOYBISEOEDZINAISPBTZMNECRIJUFUCMMUUSANMMVICNRHQJMNHPNCEPUSQDMIVYTSZTRGXSPZUVWNORGQJMYNLILUKCPHDBYLNELPHVKYAYYBYXLERMMPBMHHCQKBMHDKMTDMSSJEVWOPNGCJMYRPYQELCDPOPVPBIEZALKZWTOPRYFARATPBHGLWWMXNHPHXVKBAANAVMNLPHMEMMSZHMTXHTFMQVLILOVVULNIWGVFUCGRZZKAUNADVYXUDDJVKAYUYOWLVBEOZFGTHHSPJNKAYICWITDARZPVU
