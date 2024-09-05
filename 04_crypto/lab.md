@@ -360,3 +360,79 @@ https://www.simonsingh.net/The_Black_Chamber/vigenere_cracking_tool.html
 7.1 Usando la herramienta anterior, aplica el método Kasiski para romper el cifrado de este criptograma:
 
 RIKVBIYBITHUSEVAZMMLTKASRNHPNPZICSWDSVMBIYFQEZUBZPBRGYNTBURMBECZQKBMBPAWIXSOFNUZECNRAZFPHIYBQEOCTTIOXKUNOHMRGCNDDXZWIRDVDRZYAYYICPUYDHCKXQIECIEWUICJNNACSAZZZGACZHMRGXFTILFNNTSDAFGYWLNICFISEAMRMORPGMJLUSTAAKBFLTIBYXGAVDVXPCTSVVRLJENOWWFINZOWEHOSRMQDGYSDOPVXXGPJNRVILZNAREDUYBTVLIDLMSXKYEYVAKAYBPVTDHMTMGITDZRTIOVWQIECEYBNEDPZWKUNDOZRBAHEGQBXURFGMUECNPAIIYURLRIPTFOYBISEOEDZINAISPBTZMNECRIJUFUCMMUUSANMMVICNRHQJMNHPNCEPUSQDMIVYTSZTRGXSPZUVWNORGQJMYNLILUKCPHDBYLNELPHVKYAYYBYXLERMMPBMHHCQKBMHDKMTDMSSJEVWOPNGCJMYRPYQELCDPOPVPBIEZALKZWTOPRYFARATPBHGLWWMXNHPHXVKBAANAVMNLPHMEMMSZHMTXHTFMQVLILOVVULNIWGVFUCGRZZKAUNADVYXUDDJVKAYUYOWLVBEOZFGTHHSPJNKAYICWITDARZPVU
+
+** 8. Algoritmo DES. Cifrado de clave simétrica DES ***
+
+DES es un algoritmo de cifrado simétrico de bloques desarrollado en la década de 1970 por IBM y adoptado como estándar por el gobierno de EE.UU. en 1977. Sus características principales son:
+
+- Tamaño de bloque: Opera sobre bloques de 64 bits.
+- Tamaño de clave: Utiliza una clave de 56 bits (aunque se representa como 64 bits, 8 son de paridad).
+- El algoritmo combina varias técnicas: desplazamientos, sustituciones y operaciones XOR, entre otras, para obtener bloques cifrados de 64 bits.
+
+Siguiendo la descripción detallada del [algoritmo DES](https://web.archive.org/web/20240616180003/https://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm), completa los siguientes ejercicios, mediante scripts Python:
+
+8.1 Dada una cadena de bits de 64 bits, aplica la permutación inicial de DES 
+
+8.2 Generación de subclaves:
+   A partir de una clave de 56 bits, genera las 16 subclaves de 48 bits cada una utilizadas en DES.
+
+8.3 Función de expansión:
+   Aplica la función de expansión E a un bloque de 32 bits para obtener 48 bits.
+
+8.4. Función f (Feistel)
+   Implementa la función f (Feistel) completa para una ronda de DES.
+
+***9. Cifrado AES. Advanced Encryption Standard***
+
+El Estándar de Cifrado Avanzado (AES, por sus siglas en inglés) es un algoritmo de cifrado simétrico ampliamente utilizado y considerado muy seguro. Características principales:
+
+1. Estructura:
+   - Es un cifrado por bloques.
+   - Tamaño de bloque fijo de 128 bits (16 bytes).
+   - Soporta claves de 128, 192 o 256 bits.
+
+2. Rondas:
+   - Utiliza múltiples rondas de transformación.
+   - El número de rondas depende del tamaño de la clave:
+     * 10 rondas para claves de 128 bits
+     * 12 rondas para claves de 192 bits
+     * 14 rondas para claves de 256 bits
+3. Seguridad:
+   - Resistente a ataques conocidos de criptoanálisis
+   - __*No se conocen ataques prácticos que comprometan su seguridad.*__
+
+4. Eficiencia:
+   - Diseñado para ser eficiente en hardware y software.
+   - Permite implementaciones rápidas y compactas.
+
+5. Adopción:
+
+   - __Estándar global para cifrado simétrico__
+   - Utilizado en protocolos como TLS, IPsec, SSH, etc.
+
+9.1 Explica qué son los modos ECB, CBC en AES
+
+9.2 Supongamos que tienes un sistema que utiliza AES-128 en modo ECB (Electronic Codebook) para cifrar mensajes y la siguiente información:
+
+   Clave de cifrado (en hexadecimal):
+   2b7e151628aed2a6abf7158809cf4f3c
+
+   Mensaje a cifrar (en texto plano):
+   "Hola Mundo AES!"
+
+a) Convierte el mensaje de texto plano a su representación hexadecimal.
+
+b) Dado que AES opera en bloques de 16 bytes (128 bits), ¿cuántos bloques se necesitarán para cifrar este mensaje? ¿Se necesitará relleno (padding)?
+
+c) Si se necesita relleno, aplica PKCS7 (explica en qué consiste) e indica cómo se vería el mensaje con el relleno aplicado (en hexadecimal)
+
+
+
+# Ideas para trabajo opcional
+
+###  Cifrado ADFGVX
+ - Descripción
+ - Scripts que permitan el cifrado y descifrado
+ - Herramienta web que ayude en el criptoanálisis 
+ - [Más info](https://www.researchgate.net/publication/306265347_Deciphering_ADFGVX_messages_from_the_Eastern_Front_of_World_War_I)
+
