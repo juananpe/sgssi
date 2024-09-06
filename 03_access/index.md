@@ -2,11 +2,15 @@
 
 * Definición y objetivos: Control de acceso como mecanismo para garantizar que solo usuarios autorizados tengan acceso a recursos y sistemas.
 
-
-* Principios de Menor Privilegio: Asegurar que los usuarios tengan solo los derechos necesarios para realizar sus tareas.
+* Principio de Menor Privilegio: Asegurar que los usuarios tengan solo los derechos necesarios para realizar sus tareas.
    
 * Separación de Funciones: Dividir las tareas críticas entre diferentes usuarios para minimizar riesgos.
 
+Algunos ejemplos de la separación de funciones en la seguridad informática incluyen:
+
+1. **Administración de cuentas**: Un usuario puede crear cuentas de usuario, pero otro usuario debe autorizar y activarlas.
+2. **Gestión de accesos**: Un usuario puede configurar accesos a la red, pero otro usuario debe autorizar y aprobar los cambios.
+3. **Actualizaciones de software**: Un usuario puede descargar actualizaciones de software, pero otro usuario debe autorizar y aplicarlas.
 
 * Modelos de control de acceso: 
    - DAC (Discrecional). 
