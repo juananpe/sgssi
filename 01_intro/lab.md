@@ -96,3 +96,22 @@ $ docker compose up -d
 ¿Cómo evitar tener que hacer un zip cada vez que quieras sincronizar algo?
 
 ¿Está el fichero `babeskopia.sql` en la misma carpeta que `index.php`? ¿Qué problema de seguridad puede generar subir ese fichero?
+
+**GLOSARIO**
+
+- git
+- ssh
+- scp
+- zip
+- unzip
+- apt
+- mkdir
+- cd
+- curl
+- sh
+- sudo
+- groupadd
+- usermod
+- newgrp
+- docker
+- docker compose
