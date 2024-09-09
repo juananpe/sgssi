@@ -10,19 +10,14 @@ en local: https://github.com/juananpe/zezenak
    - Genera una `clave SSH`
    - Crea una máquina Ubuntu (asocia la clave ssh a esta máquina)
    - Abre los puertos 80, 443 y 22
-   - Crea un archivo `zip` con los ficheros del repositorio zezenak ("Gestión de Ganadería").
-   
-   Sitúate en el directorio donde esté la aplicación:
-   
-      `zip -9 -r zezenak.zip *`
-
+   - En tu máquina local, crea un archivo `zip` con los ficheros del repositorio zezenak ("Gestión de Ganadería").
    - Usa el comando `scp` para copiar el el fichero zip de la aplicación zezenak a tu máquina Azure.
-   (Asegúrate de que estás situado en el mismo sitio que tu certificado pem)
+   (Asegúrate de que estás situado en el mismo sitio que tu certificado pem o indica la ruta completa al pem)
    ```
    local$ scp -i azure-key-2024.pem /ruta/a/zezenak.zip azureuser@IP_DE_MAQUINA_AZURE:/tmp
    ```
 
-   - Conéctate por ssh a tu máquina Azure y ejecuta los siguientes comandos en la terminal de tu máquina en Azure.
+   - Conéctate por ssh a tu máquina Azure y ejecuta los siguientes comandos en la terminal de tu máquina en Azure:
 
    - Instala el comando `unzip`
    ```
@@ -33,13 +28,13 @@ en local: https://github.com/juananpe/zezenak
    - Crea un directorio sgss en tu carpeta raíz de usuario:
    ```bash
    $ cd 
-   $ mkdir sgssi
+   $ mkdir zezenak
    ```
 
-   Descomprime el fichero zip en ~/sgssi :
+   Descomprime el fichero zip en ~/zezenak :
 
    ```bash
-   $ unzip -d ~/sgssi /tmp/zezenak.zip
+   $ unzip -d ~/zezenak /tmp/zezenak.zip
    ```
 
    - Instala docker
@@ -71,7 +66,7 @@ Hello from Docker!
 
 - Lanza la aplicación de gestión de ganadería:
 ```bash
-$ cd ~/sgssi
+$ cd ~/zezenak
 $ docker compose up
 ```
 Abre un navegador apuntando a la dirección IP de tu máquina en Azure. Deberías de ver algo como esto:
