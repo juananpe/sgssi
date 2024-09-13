@@ -284,6 +284,12 @@ Ejecuta el comando `show dbs` para ver las bases de datos disponibles.
 
 Reflexiona:
 
-¿Podemos saber cuál es el password del administrador de la base de datos leyendo el fichero `docker-compose.yml` de nuestro servicio Zezenak?
+* ¿Podemos saber cuál es el password del administrador de la base de datos leyendo el fichero `docker-compose.yml` de nuestro servicio Zezenak?
+
+* Explica qué estamos haciendo exactamente con este comando:
+
+  ```bash
+  rsync -avz --progress -e "ssh -i ~/Dropbox/certificados_digitales/azure-key-2024.pem" . azureuser@40.118.98.125:~/sgssi
+  ```
 
 
