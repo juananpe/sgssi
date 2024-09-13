@@ -289,7 +289,7 @@ Reflexiona:
 * Explica qué estamos haciendo exactamente con este comando:
 
   ```bash
-  rsync -avz --progress -e "ssh -i ~/Dropbox/certificados_digitales/azure-key-2024.pem" . azureuser@40.118.98.125:~/sgssi
+  rsync -avz --progress -e "ssh -i ~/Dropbox/certificados_digitales/azure-key-2024.pem" . azureuser@A.B.C.D:~/sgssi
   ```
 
 
