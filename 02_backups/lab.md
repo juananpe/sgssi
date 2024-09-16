@@ -280,7 +280,7 @@ Puedes comprobar que la conexión a la base de datos funciona ejecutando lo sigu
  `$ mysql -h 127.0.0.1 -u root -p`
 
  Te solicitará la contraseña del administrador de MariaDB.
-Ejecuta el comando `show databases` para ver las bases de datos disponibles.
+Ejecuta el comando `show databases;` para ver las bases de datos disponibles.
 
 Reflexiona:
 
