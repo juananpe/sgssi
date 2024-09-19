@@ -36,10 +36,11 @@
 <img width="649" alt="image" src="https://github.com/user-attachments/assets/7844c03a-7005-4117-b74d-f2320b8ded2f">
 
 
-6. (Avanzado) Ejercicio de Gestión de Contraseñas:
+5. (Avanzado) Ejercicio de Gestión de Contraseñas:
    Configura una política de contraseñas en el sistema que cumpla con los siguientes requisitos:
    - Longitud mínima de 12 caracteres.
    - Debe contener al menos una letra mayúscula, una minúscula, un número y un carácter especial.
    - No puede contener el nombre de usuario.
    - Debe expirar cada 90 días.
    Utiliza el módulo PAM (Pluggable Authentication Modules) para implementar esta política.
+   Puedes usar un contenedor docker para las pruebas. Como evidencia, saca pantallazos de los comandos y pruebas realizadas.
