@@ -1,5 +1,4 @@
 1. Ejercicio de DAC (Discretionary Access Control):
-2. 
     1.1   Crea un directorio llamado `proyectoSecreto` y un archivo dentro llamado `datos.txt`. Configura los permisos de manera que:
         - Solo el propietario pueda leer y escribir en el archivo.
         - El grupo del propietario pueda leer el archivo, pero no modificarlo.
@@ -12,15 +11,25 @@
    Necesitarás hacer uso de los comandos `adduser`, `groupadd`, `usermod`, `chgrp` (o `chown`), `chmod`, `su`. Si no recuerdas cómo se usan, ayúdate de un LLM para recordarlo. Ejecuta los comandos en tu máquina de Azure. Obtén una captura de pantalla donde se vea los comandos ejecutados y las pruebas que has hecho para comprobar que el usuario Alexa puede leer pero no escribir en datos.txt.
 
 2. Ejercicio de Auditoría:
-   Configura el sistema para que registre todos los intentos de inicio de sesión fallidos. Crea un script que analice el log de autenticación y genere un informe con:
-   - Número total de intentos fallidos.
-   - Direcciones IP desde las que se originaron los intentos.
-   - Usuarios más frecuentemente atacados.
+   En la mayoría de los sistemas Linux, los intentos de inicio de sesión fallidos se registran por defecto en el archivo /var/log/auth.log
+   Conéctate por ssh a tu máquina Azure. Como root, ejecuta este comando:
 
-3. (Avanzado) Ejercicio de Autenticación Multifactor:
+   `tail -f /var/log/auth.log`
+
+   Abre otra terminal en tu ordenador local. Desde la nueva terminal abre otra sesión y conéctate de nuevo a tu máquina de Azure.
+   2.1 ¿Qué hace el comando tail? ¿cuál es el efecto de la opción -f? (prueba a ejecutar tail sin y con la opción)
+
+   2.2 Mantén el comando tail -f en ejecución. Pídele a tu compañero/a de clase que se intente conectar a tu máquina de Azure. La conexión debe ser denegada y en tu fichero auth.log debe aparecer una indicación de que el intento de conexión fue denegado. Copia y pega aquí el texto que se muestra en auth.log al denegar una conexión.
+
+   2.3 Las máquinas públicas de Azure (y de cualquier otro proveedor de hosting) son atacadas sistemáticamente. A diario se suelen registrar intentos de conexión fallidos. 
+   2.3.1. Sabiendo la respuesta de la pregunta 2.2, ¿cuál sería el comando para conocer cuántos intentos de conexión fallidos ha habido contra tu máquina?
+   2.3.2 ¿Cuál sería el comando para saber de qué direcciones IP se originaron los intentos?
+   2.3.3 Sabiendo la respuesta de 2.3.1, ¿cuál es el usuario más frecuentemente atacado?
+
+4. (Avanzado) Ejercicio de Autenticación Multifactor:
    Configura la autenticación de dos factores para el acceso SSH en tu sistema Linux. Utiliza Google Authenticator como segundo factor. Demuestra cómo funciona el proceso de inicio de sesión con 2FA.
 
-4. (Avanzado) Ejercicio de Gestión de Contraseñas:
+5. (Avanzado) Ejercicio de Gestión de Contraseñas:
    Configura una política de contraseñas en el sistema que cumpla con los siguientes requisitos:
    - Longitud mínima de 12 caracteres.
    - Debe contener al menos una letra mayúscula, una minúscula, un número y un carácter especial.
