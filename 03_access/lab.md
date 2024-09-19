@@ -28,10 +28,13 @@
 
 4. (Avanzado) Ejercicio de Autenticación Multifactor:
    Configura la autenticación de dos factores para el acceso SSH en tu sistema Linux. Utiliza Google Authenticator como segundo factor. Demuestra cómo funciona el proceso de inicio de sesión con 2FA:
-   - usando docker
-   - usando una máquina en Azure (NO uses la máquina de SGSSI, crea una nueva para este ejercicio)
+   - pruébalo primero usando docker (https://gist.github.com/juananpe/9d06a63b74e49e4fb5cf9f5dc3a50b0b)
+   - luego ejecútalo usando una máquina en Azure (NO uses la máquina de SGSSI, crea una nueva para este ejercicio. Elimínala al ser evaluado)
    - Como evidencia de este ejercicio, indica cuál es la dirección IP de tu máquina en Azure con soporte 2FA
    - Indica también cuál es el password a usar y el "emergency scratch code"
+
+<img width="649" alt="image" src="https://github.com/user-attachments/assets/7844c03a-7005-4117-b74d-f2320b8ded2f">
+
 
 6. (Avanzado) Ejercicio de Gestión de Contraseñas:
    Configura una política de contraseñas en el sistema que cumpla con los siguientes requisitos:
