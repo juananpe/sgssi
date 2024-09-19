@@ -31,7 +31,7 @@
    - usando docker
    - usando una máquina en Azure (NO uses la máquina de SGSSI, crea una nueva para este ejercicio)
    - Como evidencia de este ejercicio, indica cuál es la dirección IP de tu máquina en Azure con soporte 2FA
-   - Indica cuál es el password a usar y el "emergency scratch code"
+   - Indica también cuál es el password a usar y el "emergency scratch code"
 
 6. (Avanzado) Ejercicio de Gestión de Contraseñas:
    Configura una política de contraseñas en el sistema que cumpla con los siguientes requisitos:
