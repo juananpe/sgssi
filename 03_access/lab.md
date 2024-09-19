@@ -1,9 +1,11 @@
 1. Ejercicio de DAC (Discretionary Access Control):
-1.1   Crea un directorio llamado "proyectoSecreto" y un archivo dentro llamado "datos.txt". Configura los permisos de manera que:
-   - Solo el propietario pueda leer y escribir en el archivo.
-   - El grupo del propietario pueda leer el archivo, pero no modificarlo.
-   - Otros usuarios no tengan ningún permiso sobre el archivo.
-   Demuestra los permisos utilizando el comando ls -l.
+2. 
+    1.1   Crea un directorio llamado `proyectoSecreto` y un archivo dentro llamado `datos.txt`. Configura los permisos de manera que:
+        - Solo el propietario pueda leer y escribir en el archivo.
+        - El grupo del propietario pueda leer el archivo, pero no modificarlo.
+        - Otros usuarios no tengan ningún permiso sobre el archivo.
+
+   Muestra los permisos utilizando el comando ls -al.
 
 1.2 Indica cómo crear un usuario de nombre alexa, cómo crear un grupo de nombre proyecto, y cómo  asignar alexa y azureuser al grupo proyecto. Indica los pasos que habría que dar para probar que Alexa no puede acceder en escritura al fichero datos.
 
