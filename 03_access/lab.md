@@ -10,7 +10,7 @@
 
    Necesitarás hacer uso de los comandos `adduser`, `groupadd`, `usermod`, `chgrp` (o `chown`), `chmod`, `su`. Si no recuerdas cómo se usan, ayúdate de un LLM para recordarlo. Ejecuta los comandos en tu máquina de Azure. Obtén una captura de pantalla donde se vea los comandos ejecutados y las pruebas que has hecho para comprobar que el usuario Alexa puede leer pero no escribir en datos.txt.
 
-2. Ejercicio de Auditoría:
+2. Auditoría:
    En la mayoría de los sistemas Linux, los intentos de inicio de sesión fallidos se registran por defecto en el archivo /var/log/auth.log
    Conéctate por ssh a tu máquina Azure. Como root, ejecuta este comando:
 
@@ -26,7 +26,7 @@
       2. ¿Cuál sería el comando para saber de qué direcciones IP se originaron los intentos?
       3. ¿Cuál es el usuario más frecuentemente atacado?
 
-4. (Avanzado) Ejercicio de Autenticación Multifactor:
+4. (Avanzado) Ejercicio de Autenticación Multifactor (TOTP):
    Configura la autenticación de dos factores para el acceso SSH en tu sistema Linux. Utiliza Google Authenticator como segundo factor. Demuestra cómo funciona el proceso de inicio de sesión con 2FA:
    - pruébalo primero usando docker (https://gist.github.com/juananpe/9d06a63b74e49e4fb5cf9f5dc3a50b0b)
    - luego ejecútalo usando una máquina en Azure (NO uses la máquina de SGSSI, crea una nueva para este ejercicio. Elimínala al ser evaluado)
