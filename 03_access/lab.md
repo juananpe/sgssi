@@ -1,4 +1,4 @@
-1. Ejercicio de DAC (Discretionary Access Control):
+1. DAC (Discretionary Access Control):
    1. Crea un directorio llamado `proyectoSecreto` y un archivo dentro llamado `datos.txt`. Configura los permisos de manera que:
       - Solo el propietario pueda leer y escribir en el archivo.
       - El grupo del propietario pueda leer el archivo, pero no modificarlo.
