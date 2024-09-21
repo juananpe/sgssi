@@ -382,7 +382,7 @@ Siguiendo la descripción detallada del [algoritmo DES](https://web.archive.org/
 8.4. Función f (Feistel)
    Implementa la función f (Feistel) completa para una ronda de DES.
 
-***9. Cifrado AES. Advanced Encryption Standard***
+**9. Cifrado AES. Advanced Encryption Standard**
 
 El Estándar de Cifrado Avanzado (AES, por sus siglas en inglés) es un algoritmo de cifrado simétrico ampliamente utilizado y considerado muy seguro. Características principales:
 
