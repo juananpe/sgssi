@@ -266,6 +266,8 @@ Te será de gran utilidad esta aplicación web: [CrackMono](./crackmono/public/i
 
 5.3 Desde el punto de vista de la seguridad, ¿qué sencilla recomendación a la hora de cifrar (sin cambiar el algoritmo de cifrado) haría que el criptoanálisis fuera bastante más complejo?
 
+5.4 ¿Cuántos años tardaríamos en aplicar fuerza bruta a un criptograma cifrado con un algoritmo de sustitución monoalfabética (donde cada letra se sustituye por otra según un diccionario aleatorio)? Asume que somos capaces de calcular 10^9 claves por segundo... es decir, mil millones de claves *por segundo*.
+
 **6. Sustitución polialfabética. Cifrado Vigenère.**
 
 El cifrado Vigenère es un método de cifrado por sustitución polialfabética que utiliza una clave para encriptar y desencriptar un mensaje. Es una mejora del cifrado César, ya que usa múltiples alfabetos desplazados en lugar de uno solo.
