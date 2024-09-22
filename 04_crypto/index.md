@@ -28,8 +28,8 @@ Existen diversas técnicas en criptografía, pero las más básicas son:
 
 * **Sustitución (Substitution Cipher):** Se reemplazan los caracteres del mensaje por otros caracteres o símbolos. 
     - Ejemplos:
-        - césar
-        - vigénere
+        - César
+        - Vigénere
 
 
 
