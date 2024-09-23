@@ -11,7 +11,7 @@
 -------
 - Álex, 21 años, estudiante de cuarto curso del Grado en Ingeniería Informática.
 - Tiene conocimientos básicos de Python y lo ha utilizado para algunos proyectos académicos.
-- Está interesada en especializarse en ciberseguridad y quiere adquirir experiencia práctica en este campo.
+- Está interesado en especializarse en ciberseguridad y quiere adquirir experiencia práctica en este campo.
 - Álex aprende mejor con un enfoque práctico y disfruta resolviendo problemas en equipo.
 
 ## Temario
