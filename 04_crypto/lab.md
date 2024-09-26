@@ -292,7 +292,7 @@ El cifrado Vigenère es un método de cifrado por sustitución polialfabética q
      0  19 0 16 20  4  0 11  0  12  0  13  4  2  4  17
      ```
 
-   - Clave: `LEMONLEMONLEMON`
+   - Clave: `LEMONLEMONLEMONL`
      ```
      L  E  M  O  N  L E  M  O  N  L E  M  O  N  L 
      11 4 12 14 13 11 4 12 14 13 11 4 12 14 13  11
