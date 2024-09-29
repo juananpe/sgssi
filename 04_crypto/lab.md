@@ -365,7 +365,7 @@ RIKVBIYBITHUSEVAZMMLTKASRNHPNPZICSWDSVMBIYFQEZUBZPBRGYNTBURMBECZQKBMBPAWIXSOFNUZ
 
 **8. Algoritmo DES. Cifrado de clave simétrica DES**
 
-DES es un algoritmo de cifrado simétrico de bloques desarrollado en la década de 1970 por IBM y adoptado como estándar por el gobierno de EE.UU. en 1977. Sus características principales son:
+DES es un algoritmo de cifrado simétrico por bloques desarrollado en la década de 1970 por IBM y adoptado como estándar por el gobierno de EE.UU. en 1977. Sus características principales son:
 
 - Tamaño de bloque: Opera sobre bloques de 64 bits.
 - Tamaño de clave: Utiliza una clave de 56 bits (aunque se representa como 64 bits, 8 son de paridad).
@@ -373,16 +373,40 @@ DES es un algoritmo de cifrado simétrico de bloques desarrollado en la década 
 
 Siguiendo la descripción detallada del [algoritmo DES](https://web.archive.org/web/20240616180003/https://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm), completa los siguientes ejercicios, mediante scripts Python:
 
-8.1 Dada una cadena de bits de 64 bits, aplica la permutación inicial de DES 
+**Ejercicios opcionales**
 
-8.2 Generación de subclaves:
-   A partir de una clave de 56 bits, genera las 16 subclaves de 48 bits cada una utilizadas en DES.
+8.1 Lee el funcionamiento del algoritmo DES:
+http://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm
 
-8.3 Función de expansión:
-   Aplica la función de expansión E a un bloque de 32 bits para obtener 48 bits.
+Mensaje en claro (en hexadecimal):
+```
+M=DECAFDECAFDECAF0
+(1101111011001010111111011110110010101111110111101100101011110000)
+```
 
-8.4. Función f (Feistel)
-   Implementa la función f (Feistel) completa para una ronda de DES.
+si la clave es:
+
+```
+K=133457799BBCDFF1
+(0001001100110100010101110111100110011011101111001101111111110001)
+````
+
+¿cuál es el valor de R1? (la respuesta debe ser un número binario de 32 bits)
+
+8.2 De igual forma, sea : 
+```
+M=DEADBEEFDEADBEEF
+(1101111010101101101111101110111111011110101011011011111011101111)
+```
+
+```
+K=133457799BBCDFF1
+(0001001100110100010101110111100110011011101111001101111111110001)
+```
+
+¿cuál sería el valor de R1?
+
+8.3 Finalmente, manteniendo las condiciones anteriores, supongamos que ahora el mensaje es "BITCOINS", ¿cuál es ahora R1?
 
 **9. Cifrado AES. Advanced Encryption Standard**
 
@@ -412,7 +436,9 @@ El Estándar de Cifrado Avanzado (AES, por sus siglas en inglés) es un algoritm
    - __Estándar global para cifrado simétrico__
    - Utilizado en protocolos como TLS, IPsec, SSH, etc.
 
-9.1 Explica qué son los modos ECB, CBC en AES
+**Ejercicios**
+
+9.1 Explica qué son los modos ECB, CBC en un cifrado por bloques.
 
 9.2 Supongamos que tienes un sistema que utiliza AES-128 en modo ECB (Electronic Codebook) para cifrar mensajes y la siguiente información:
 
