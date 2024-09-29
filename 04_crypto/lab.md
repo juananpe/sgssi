@@ -408,6 +408,22 @@ K=133457799BBCDFF1
 
 8.3 Finalmente, manteniendo las condiciones anteriores, supongamos que ahora el mensaje es "BITCOINS", ¿cuál es ahora R1?
 
+
+Referencias DES
+======
+
+https://en.wikipedia.org/wiki/Block_cipher#/media/File:SubstitutionPermutationNetwork2.png
+
+https://en.wikipedia.org/wiki/Data_Encryption_Standard
+
+https://en.wikipedia.org/wiki/DES_Challenges
+
+https://en.wikipedia.org/wiki/DESCHALL_Project
+
+https://en.wikipedia.org/wiki/EFF_DES_cracker
+
+
+
 **9. Cifrado AES. Advanced Encryption Standard**
 
 El Estándar de Cifrado Avanzado (AES, por sus siglas en inglés) es un algoritmo de cifrado simétrico ampliamente utilizado y considerado muy seguro. Características principales:
@@ -455,7 +471,118 @@ b) Dado que AES opera en bloques de 16 bytes (128 bits), ¿cuántos bloques se n
 c) Si se necesita relleno, aplica PKCS7 (explica en qué consiste) e indica cómo se vería el mensaje con el relleno aplicado (en hexadecimal)
 
 
+Funciones Hash
+=============
 
+Resumen criptográfico
+(Hash)
+
+* Funciones hash
+  h(x) = y 
+
+* Función matemática irreversible
+* Debe evitar colisiones
+* Debe estar definida para cualquier x
+
+
+* Si h(x) = y  entonces:
+ - NO debe ser posible derivar x a partir de y (es decir, no debe existir la función inversa de h)
+ - Idealmente, NO debería existir ningún otro x' tal que x' != x y h(x') = y  (es decir, debe evitar colisiones) 
+
+```
+$ echo Kaixo |md5sum
+ddf3970193c3c626b4cc7d557f595e7b  
+```
+(hash md5 = 32 símbolos hexa => 32/2 caracteres => 16 bytes ==> 16*8 = 128 bits)
+
+```
+$ echo Kaixo. |md5sum
+79b770191c18b8ce35216a396d385a85
+```
+```
+$ echo Kaixo  > file.txt
+
+$ md5sum file.txt
+ddf3970193c3c626b4cc7d557f595e7b
+
+$ echo Kaixo > fichero.txt
+
+$ md5sum fichero.txt 
+ddf3970193c3c626b4cc7d557f595e7b
+
+$ echo -n kaixo | md5sum 
+017c2cdcef481181a26cdb88ca081994
+```
+
+(comprobar online https://www.md5.cz/ )
+
+
+### MD5 
+* Desarrollado en 1991 por Ronald Rivest (MIT) 
+* message-digest algorithm v5
+* considerado inseguro por problemas de colisión
+
+Ver ejemplo: https://www.mscs.dal.ca/~selinger/md5collision/
+
+### SHA 
+- Secure Hash Algorithm
+   - SHA-1
+   - SHA-256
+   - SHA-512
+
+```
+$ shasum --help
+Usage: shasum [OPTION]... [FILE]...
+Print or check SHA checksums.
+
+  -a, --algorithm   1 (default), 224, 256, 384, 512, 512224, 512256
+```
+
+```
+echo -n hola | shasum 
+99800b85d3383e3a2fb45eb7d0066a4879a9dad0  
+```
+(40 símbolos hexa --> 40/2 = 20 caracteres => 20 bytes * 8 bits/byte = 160bits)
+
+```
+echo -n hola | shasum -a 224
+8cf31238b4a396f90185f770921dc63b31f4d48604026ffd4f8ddc80  (56 símbolos -> 28 caracteres => 28*8 = 224 bits) 
+```
+**Usos**
+
+* Comprobación de integridad de ficheros
+Ejemplo: http://releases.mozilla.org/pub/firefox/releases/130.0/
+
+* Almacenamiento de hashes en lugar de passwords en claro
+
+![alt text](image.png)
+(Fuente: http://www.unixwiz.net/techtips/iguide-crypto-hashes.html)
+* Implementación de Firma digital 
+
+**Ejercicios**
+
+10. Hemos encontrado el siguiente contenido dentro del fichero /etc/shadow de una antigua máquina Linux:
+
+```
+test:$6$v/Z3Vau7$ziIipwuJ0C0MA7mSq8y.9dKuCpOlmA2DgHbUs.okDChmkSbIwf4krzKnidSn91uJo98wBU2bozCgel25AVe39.:15009:0:99999:7
+````
+
+- Explica qué es cada campo. 
+- ¿Qué algoritmo de hash se ha aplicado?
+- ¿En qué fecha se cambió la contraseña de este usuario por últma vez?
+
+11. Hemos encontrado el siguiente contenido dentro del fichero /etc/shadow de una máquina Linux reciente:
+
+```
+juanan:$y$j9T$6lAXXnVYLr2Uwmhv9JpLL/$0S7MZaAbYpz/oQrHta9Q71rEOPTtfH9yliTW5yH.Hv3:19995:0:99999:7:::
+```
+
+- Explica qué es cada campo. 
+- ¿Qué algoritmo de hash se ha aplicado?
+- ¿En qué fecha se cambió la contraseña de este usuario por últma vez?
+
+
+<!-- 
 # Ideas para trabajo opcional
 
 ###  Cifrado ADFGVX
@@ -464,3 +591,4 @@ c) Si se necesita relleno, aplica PKCS7 (explica en qué consiste) e indica cóm
  - Herramienta web que ayude en el criptoanálisis 
  - [Más info](https://www.researchgate.net/publication/306265347_Deciphering_ADFGVX_messages_from_the_Eastern_Front_of_World_War_I)
 
+-->
