@@ -408,6 +408,14 @@ K=133457799BBCDFF1
 
 8.3 Finalmente, manteniendo las condiciones anteriores, supongamos que ahora el mensaje es "BITCOINS", ¿cuál es ahora R1?
 
+Los ejercicios 8.1-8.3 se pueden resolver implementando un script en python que tome M y K como parámetros y devuelva R1.
+
+Por ejemplo:
+```
+$ partialDES.py M=0123456789ABCDEF K=133457799BBCDFF1
+R1 Binary: 1110 1111 0100 1010 0110 0101 0100 0100
+R1 Hexadecimal: EF4A6544
+```
 
 Referencias DES
 ======
