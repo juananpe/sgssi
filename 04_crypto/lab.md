@@ -757,6 +757,7 @@ La velocidad kH/s (en miles de hashes por segundo) dependerá de la capacidad de
 https://raw.githubusercontent.com/deargle/security-assignments/master/labs/files/john.doc
 
 17.1 ¿Cuál es el password que protege al documento john.doc?
+
 17.2 Abre john.doc. ¿Qué día se escribió el post que se muestra en el doc? (la fecha aparece al final de la última página del doc)
 
 
