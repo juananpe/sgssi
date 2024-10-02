@@ -589,6 +589,180 @@ juanan:$y$j9T$6lAXXnVYLr2Uwmhv9JpLL/$0S7MZaAbYpz/oQrHta9Q71rEOPTtfH9yliTW5yH.Hv3
 - ¿Qué algoritmo de hash se ha aplicado?
 - ¿En qué fecha se cambió la contraseña de este usuario por últma vez?
 
+**Ejercicios sobre fuerza bruta**
+
+12. Supongamos que tenemos un ordenador que calcula 10^9 claves/seg. ¿Cuántos días (o años) necesitaría para atacar por fuerza bruta una contraseña alfanumérica (mayúsculas, minúsculas, dígitos) de 8 caracteres? ¿Y si fuera de 14 caracteres?
+
+Importante: indica las operaciones realizadas.
+
+13. Supongamos que queremos romper, por un ataque de fuerza bruta, un cifrado por bloques que usa claves de 40 bits disponiendo de un ordenador que calcula 10^6 claves por segundo. ¿Cuántos días tardaríamos? ¿y si la clave fuera de 56 bits?
+
+14. Supongamos ahora que tenemos 8.000.000.000 de ordenadores, cada uno capaz de calcular 10^12 claves por segundo. ¿Cuánto tardaríamos en romper la clave de 56 bits? ¿y una clave AES de 128 bits?
+
+**Ejercicios sobre aplicaciones prácticas de funciones hash**
+
+15. ¿Cuál es el hash sha512 de este fichero?
+https://download.documentfoundation.org/libreoffice/stable/24.8.2/win/x86_64/LibreOffice_24.8.2_Win_x86-64.msi
+
+¿Coincide con el oficial?
+
+16. Una contraseña débil generará un hash débil que puede ser roto usando ataques de diccionario, fuerza bruta o híbridos. Dos de las herramientas más utilizadas en auditorías de contraseñas son JohnTheRipper y hashcat. Ambas herramientas necesitan saber qué tipo de hash queremos romper antes de empezar. Dado un hash, saber con qué función se generó puede resultar complejo. Nos ayudaremos de hash-id.py para esa labor.
+
+Desde una máquina Linux (puede ser wsl o tu máquina Linux en Azure):
+```
+wget https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py
+```
+
+Nota: la versión de John que se instala con apt es muy vieja y no soporta muchos formatos de hash. Idealmente deberías de compilar John (versión Jumbo) para tu máquina, de forma genérica: https://github.com/openwall/john/blob/bleeding-jumbo/doc/INSTALL
+o bien especificando soporte GPU (ver: https://github.com/openwall/john/blob/bleeding-jumbo/doc/INSTALL-UBUNTU)
+Otra opción es usar John The Ripper Jumbo desde un contenedor docker:
+https://hub.docker.com/r/phocean/john_the_ripper_jumbo
+
+```
+sudo apt install john 
+john --format=[format] --wordlist=[path to wordlist] [path to file] 
+```
+Las opciones de John son las siguientes:
+--format= Opción para indicar a John el formato del hash.
+--wordlist= Opción para indicar una lista de palabras (diccionario) .
+[path to file] Archivo con los hash a romper.
+
+Supongamos que tenemos como clave la palabra 'contraseña'. Obtengamos sus hashes en distintos formatos:
+
+```
+$ echo -n contraseña | md5sum 
+4c882dcb24bcb1bc225391a602feca7c
+
+$ echo -n contraseña | shasum -a 256
+edf9cf90718610ee7de53c0dcc250739239044de9ba115bb0ca6026c3e4958a5
+```
+
+Podemos hacer uso de la herramienta `hash-id.py` que hemos descargado en un paso anterior para determinar el formato del hash:
+
+```
+python hash-id.py
+ HASH: 4c882dcb24bcb1bc225391a602feca7c
+
+Possible Hashs:
+[+] MD5
+[+] Domain Cached Credentials - MD4(MD4(($pass)).(strtolower($username)))
+```
+
+Como vemos, el formato del hash podría coincidir con dos tipos. Aunque en nuestro caso sabemos que es MD5.
+
+Ídem para el formato sha-256:
+
+```
+HASH: edf9cf90718610ee7de53c0dcc250739239044de9ba115bb0ca6026c3e4958a5
+
+Possible Hashs:
+[+] SHA-256
+[+] Haval-256
+```
+
+Para intentar crackear el hash (obtener el password original que generó ese hash), haremos uso de John y un ataque de diccionario, es decir, probar a generar el hash de miles de passwords y ver si alguno coincide con el objetivo.
+
+Necesitaremos bajar una lista de posibles passwords. Una de las más usadas es la conocida como rockyou.txt:
+
+```
+$ wget https://github.com/danielmiessler/SecLists/raw/refs/heads/master/Passwords/Leaked-Databases/rockyou.txt.tar.gz
+$ tar -xvzf rockyou.txt.tar.gz
+```
+
+Guardamos el hash md5 en md5.txt y el hash sha-256 en sha256.txt.  Y ya tenemos todo listo para ejecutar John:
+
+```
+$ john --format=Raw-MD5 --wordlist=./rockyou.txt md5.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (Raw-MD5 [MD5 128/128 ASIMD 4x2])
+Press 'q' or Ctrl-C to abort, almost any other key for status
+contraseña       (?)
+1g 0:00:00:00 DONE (2024-10-02 21:26) 100.0g/s 409600p/s 409600c/s 409600C/s cheska..oooooo
+```
+
+Probemos ahora con el hash sha-256
+
+```
+$ john --format=Raw-SHA256 --wordlist=./rockyou.txt sha256.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (Raw-SHA256 [SHA256 128/128 ASIMD 4x])
+Press 'q' or Ctrl-C to abort, almost any other key for status
+contraseña       (?)
+1g 0:00:00:00 DONE (2024-10-02 21:32) 100.0g/s 409600p/s 409600c/s 409600C/s energy..oooooo
+Use the "--show --format=Raw-SHA256" options to display all of the cracked passwords reliably
+Session completed
+```
+
+También hemos tenido éxito. Una vez terminado un ataque, podemos revisar los resultados con la opción --show:
+
+```
+$ john --format=Raw-SHA256 --show sha256.txt
+?:contraseña
+
+1 password hash cracked, 0 left
+```
+
+Queremos romper el password del siguiente hash encontrado en un fichero /etc/shadow:
+
+```
+$6$v/Z3Vau7$ziIipwuJ0C0MA7mSq8y.9dKuCpOlmA2DgHbUs.okDChmkSbIwf4krzKnidSn91uJo98wBU2bozCgel25AVe39.
+```
+
+Indica los pasos a dar (identificar el formato, lanzar John...) así como el password que originó dicho hash. Pistas: 1) hash-id no siempre acierta. 2) John the Ripper puede acertar sin especificarle el formato...
+
+
+16. Hashcat es otra potente herramienta para auditar la robustez de los passwords (password cracking) partiendo de los hashes.
+Sigue las instrucciones de la sección "Offline Attack Using Hashcat" de este documento:
+https://security-assignments.com/labs/lab_password_cracking.html#part-6-offline-attack-using-hashcat
+
+En él se muestra cómo romper el hash de un documento .doc protegido por contraseña
+(https://raw.githubusercontent.com/deargle/security-assignments/master/labs/files/hashcat.doc) 
+
+![hashcat.doc está protegido por contraseña](image-2.png)
+
+Primero se obtiene el hash del .doc protegido usando `office2john.py` (una herramienta de los mismos autores de John The Ripper). 
+
+Después se ejecuta hashcat con distintos parámetros, entre ellos, `-a 0 -m 9700`
+para crackear los hashes. El modo -m 9700 indica que el hash fue generado por una versión de MS Office <= 2003. La opción -a 0 indica un ataque directo de diccionario (sin ninguna mutación de palabras).
+
+Verás un resultado como:
+```
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 9700 (MS Office <= 2003 $0/$1, MD5 + RC4)
+Hash.Target......: $oldoffice$1*b405d2e0bef836cd538b96de63d64cfd*7c33f...7f0cad
+Time.Started.....: Wed Oct  2 21:54:58 2024, (0 secs)
+Time.Estimated...: Wed Oct  2 21:54:58 2024, (0 secs)
+Kernel.Feature...: Optimized Kernel
+Guess.Base.......: File (./rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........: 30098.3 kH/s (7.18ms) @ Accel:1024 Loops:1 Thr:32 Vec:1
+Recovered........: 1/1 (100.00%) Digests (total), 1/1 (100.00%) Digests (new)
+Progress.........: 327953/14344384 (2.29%)
+Rejected.........: 273/327953 (0.08%)
+Restore.Point....: 0/14344384 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
+Candidate.Engine.: Device Generator
+Candidates.#1....: 123456 -> 000061
+Hardware.Mon.#1..: Util: 85%
+```
+
+La velocidad kH/s (en miles de hashes por segundo) dependerá de la capacidad de tu máquina. 
+
+16.1 ¿Cuál es el password que protege al documento hashcat.doc?
+16.2 Abre el hashcat.doc con la contraseña que acabas de encontrar. ¿Qué día se escribió el post que se muestra en la primera página del .doc?
+
+17. Aplica el procedimiento del ejercicio 16 para obtener la contraseña que protege a este documento:
+
+https://raw.githubusercontent.com/deargle/security-assignments/master/labs/files/john.doc
+
+17.1 ¿Cuál es el password que protege al documento john.doc?
+17.2 Abre john.doc. ¿Qué día se escribió el post que se muestra en el doc? (la fecha aparece al final de la última página del doc)
+
+
+18. OPCIONAL. Si terminas los ejercicios anteriores y todavía quieres saber más al respecto, puedes probar a crackear esta lista de hashes obtenidos de una filtración de LinkedIn en 2016:
+https://security-assignments.com/labs/lab_password_cracking.html#part-7-cracking-linkedin-hashes-using-hashcat
+
 
 <!-- 
 # Ideas para trabajo opcional
