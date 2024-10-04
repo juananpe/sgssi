@@ -601,7 +601,7 @@ Importante: indica las operaciones realizadas.
 
 **Ejercicios sobre aplicaciones prácticas de funciones hash**
 
-15. ¿Cuál es el hash sha512 de este fichero?
+15. ¿Cuál es el hash sha256 de este fichero?
 https://download.documentfoundation.org/libreoffice/stable/24.8.2/win/x86_64/LibreOffice_24.8.2_Win_x86-64.msi
 
 ¿Coincide con el oficial?
