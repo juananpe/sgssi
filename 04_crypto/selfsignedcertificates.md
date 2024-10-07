@@ -2,9 +2,10 @@
 
 
 ## create CA key and cert simultaneously
+```bash
 openssl req -x509 -newkey RSA -nodes -keyout CA.key -days 10 -out CA.pem -reqexts \
 	v3_ca -subj "/C=ES/ST=Eus/L=Donostia/O=EHU/OU=SGSSI"
-
+```
 
 - subj format:
 	+ `C` - Country name
@@ -37,17 +38,17 @@ To create a client certificate signed by the CA you've just created, you'll need
 Here's how you can do this using OpenSSL commands:
 
 1. Generate the client's private key:
-```
+```bash
 openssl genrsa -out client.key 2048
 ```
 
 2. Create a Certificate Signing Request (CSR) for the client:
-```
+```bash
 openssl req -new -key client.key -out client.csr -subj "/C=ES/ST=Eus/L=Donostia/O=ClienteOrg/OU=ClienteDept/CN=cliente.ejemplo.com"
 ```
 
 3. Use the CA to sign the client's CSR and generate the client certificate:
-```
+```bash
 openssl x509 -req -in client.csr -CA CA.pem -CAkey CA.key -CAcreateserial -out client.crt -days 365 -sha256
 ```
 
@@ -72,7 +73,7 @@ After running these commands, you'll have:
 
 If you needed to create a PKCS#12 file from your client certificate and key, you could use a command like this:
 
-```
+```bash
 openssl pkcs12 -export -out client.p12 -inkey client.key -in client.crt -certfile CA.pem
 ```
 
@@ -80,9 +81,9 @@ This would create a PKCS#12 file (client.p12) containing the client's private ke
 
 
 Verifiy the PKCS#12 file:
-
+```bash
  openssl pkcs12 -in client.p12 -nokeys -cacerts -passin pass:YOURPASSWORD
-
+```
 
 
 # FAQ
