@@ -776,14 +776,20 @@ Acepta todas las opciones por defecto. En Windows, es posible que al final del p
 ![alt text](image-4.png)
 
 21. Abre un documento PDF (cualquier documento PDF) y fírmalo con Adobe Acrobat Reader. Si no tienes Acrobat Reader, instálalo (es gratuito y multiplataforma). Para firmarlo, selecciona la opción 1 (Use a certificate). Al firmar digitalmente, Reader te pedirá que marques en el PDF una zona donde incluir una parte visible de la firma (2). Este punto 2 es puramente estético, no tiene nada que ver con que el fichero esté firmado o ono. La verdadera firma digital se encuentra en el panel de firmas (4), accesible pulsando en el botón de "Signature Panel".
+        
+__Nota__: Para realizar la firma digital de PDFs también puedes instalar [AutoFirma](https://firmaelectronica.gob.es/Home/Descargas.html) (en lugar de Adobe Acrobat Reader).
 
 __IMPORTANTE__: en (2) debe verse tu NOMBRE y APELLIDO (en la parte -2- del ejemplo, donde pone cliente.ejempo.com)
  ![alt text](image-3.png)
+ 
+ Sube el PDF firmado a sgssi.ikasten.io (EJ-10)
 
 
     Inicialmente la firma digital realizada con tu propio certificado NO será válida. Es lógico, tu sistema operativo NO confía en tu CA (y por tanto tampoco en tu certificado autofirmado). Es necesario otorgar confianza al certificado desde (3).
 
 22. __OPCIONAL__: si has obtenido un certificado digital de la FNMT, añade otra firma digital AL MISMO DOCUMENTO FIRMADO del ejercicio 21. Es decir, ese PDF tendrá ahora dos firmas, una con un certificado digital autofirmado y otra con un certificado oficial de la FNMT.
+
+Si realizas este ejercicio, sube el PDF firmado a sgssi.ikasten.io (EJ-11)
 
 ## GPG
 # Introducción y Ejercicios Básicos de GPG
@@ -867,8 +873,11 @@ Compara esta huella digital con la que te proporcione el dueño de la clave por 
 
 https://gist.github.com/juananpe/7bb6872d3408a5b194fb15cb03ce5834
 
-7. Crea un mensaje de texto ejercicioGPG.txt, con tu Nombre, Apellidos y dirección de correo electrónico. Cífralo y fírmalo con GPG para enviárselo a Juanan.
+7. Publica tu clave pública en un gist (https://gist.github.com). Indica la URL de tu Gist en sgssi.ikasten.io (EJ-12).
 
+8. Crea un mensaje de texto ejercicioGPG.txt, con tu Nombre, Apellidos, dirección de correo electrónico. Cífralo y fírmalo con GPG para enviárselo a Juanan.
+
+Sube el mensaje cifrado y firmado a sgssi.ikasten.io (EJ-13).
 
 <!-- 
 # Ideas para trabajo opcional
