@@ -764,6 +764,105 @@ https://raw.githubusercontent.com/deargle/security-assignments/master/labs/files
 18. OPCIONAL. Si terminas los ejercicios anteriores y todavía quieres saber más al respecto, puedes probar a crackear esta lista de hashes obtenidos de una filtración de LinkedIn en 2016:
 https://security-assignments.com/labs/lab_password_cracking.html#part-7-cracking-linkedin-hashes-using-hashcat
 
+# CERTIFICADOS Y FIRMA DIGITAL
+
+19. Crea un certificado digital autofirmado (necesitarás crear tu propia autoridad de certificación (CA), una clave privada y un certificado X509 autofirmado por la CA). Crea un contenedor PKCS12 (.p12) que incluya tu clave privada y el certificado X509. Sigue las instrucciones de este documento: https://github.com/juananpe/sgssi/blob/main/04_crypto/selfsignedcertificates.md
+
+__IMPORTANTE__: cuando generes el certificado, usa tu nombre y apellido en el campo CN.
+
+20. Instala el fichero .p12 en el gestor de certificados de tu sistema operativo (basta con hacer doble click sobre el mismo)
+
+Acepta todas las opciones por defecto. En Windows, es posible que al final del proceso te muestre esta alerta. Acepta confiar en la CA autogenerada.
+![alt text](image-4.png)
+
+21. Abre un documento PDF (cualquier documento PDF) y fírmalo con Adobe Acrobat Reader. Si no tienes Acrobat Reader, instálalo (es gratuito y multiplataforma). Para firmarlo, selecciona la opción 1 (Use a certificate). Al firmar digitalmente, Reader te pedirá que marques en el PDF una zona donde incluir una parte visible de la firma (2). Este punto 2 es puramente estético, no tiene nada que ver con que el fichero esté firmado o ono. La verdadera firma digital se encuentra en el panel de firmas (4), accesible pulsando en el botón de "Signature Panel".
+
+__IMPORTANTE__: en (2) debe verse tu NOMBRE y APELLIDO (en la parte -2- del ejemplo, donde pone cliente.ejempo.com)
+ ![alt text](image-3.png)
+
+
+    Inicialmente la firma digital realizada con tu propio certificado NO será válida. Es lógico, tu sistema operativo NO confía en tu CA (y por tanto tampoco en tu certificado autofirmado). Es necesario otorgar confianza al certificado desde (3).
+
+22. __OPCIONAL__: si has obtenido un certificado digital de la FNMT, añade otra firma digital AL MISMO DOCUMENTO FIRMADO del ejercicio 21. Es decir, ese PDF tendrá ahora dos firmas, una con un certificado digital autofirmado y otra con un certificado oficial de la FNMT.
+
+## GPG
+# Introducción y Ejercicios Básicos de GPG
+
+## Introducción a GPG
+
+GPG (GNU Privacy Guard) es una implementación libre y de código abierto del estándar OpenPGP para cifrado y firma digital. GPG utiliza criptografía de clave pública para proporcionar:
+
+1. **Confidencialidad**: Permite cifrar mensajes de modo que solo el destinatario previsto pueda leerlos.
+2. **Integridad**: Asegura que el mensaje no ha sido alterado durante la transmisión.
+3. **Autenticación**: Verifica la identidad del remitente del mensaje.
+4. **No repudio**: El remitente no puede negar haber enviado el mensaje firmado.
+
+GPG utiliza un sistema de pares de claves:
+- **Clave pública**: Se comparte libremente y se usa para cifrar mensajes o verificar firmas.
+- **Clave privada**: Se mantiene en secreto y se usa para descifrar mensajes o crear firmas digitales.
+
+GPG es ampliamente utilizado para proteger correos electrónicos, archivos y comunicaciones en general, siendo una herramienta fundamental para la privacidad y seguridad digital.
+
+## Ejercicios Básicos de GPG
+
+### Ejercicio 1: Crear un par de claves (pública y privada)
+
+1. Abre una terminal.
+2. Ejecuta el siguiente comando:
+   ```
+   gpg --gen-key
+   ```
+3. Sigue las instrucciones en pantalla para completar el proceso:
+   - Elige el tipo de clave (por defecto RSA and RSA).
+   - Establece el tamaño de la clave (se recomienda 4096 bits).
+   - Establece el tiempo de validez de la clave.
+   - Proporciona tu nombre y dirección de correo electrónico.
+   - Establece una contraseña segura para proteger tu clave privada.
+
+### Ejercicio 2: Exportar tu clave pública
+
+1. Para exportar tu clave pública, ejecuta:
+   ```
+   gpg --export --armor tu_email@ejemplo.com > mi_clave_publica.asc
+   ```
+2. Esto creará un archivo llamado `mi_clave_publica.asc` con tu clave pública en formato texto.
+
+### Ejercicio 3: Importar la clave pública de otra persona
+
+1. Supongamos que has recibido la clave pública de un amigo en un archivo llamado `clave_amigo.asc`.
+2. Para importarla, ejecuta:
+   ```
+   gpg --import clave_amigo.asc
+   ```
+
+### Ejercicio 4: Cifrar y firmar un mensaje
+
+1. Crea un archivo de texto llamado `mensaje.txt` con el contenido que quieras cifrar.
+2. Para cifrar y firmar el mensaje para tu amigo, ejecuta:
+   ```
+   gpg --encrypt --sign --armor -r email_amigo@ejemplo.com mensaje.txt
+   ```
+3. Esto creará un archivo llamado `mensaje.txt.asc` que contiene el mensaje cifrado y firmado.
+
+### Ejercicio 5: Descifrar y verificar la firma de un mensaje
+
+1. Supongamos que has recibido un mensaje cifrado y firmado llamado `mensaje_recibido.txt.asc`.
+2. Para descifrar y verificar la firma, ejecuta:
+   ```
+   gpg --decrypt mensaje_recibido.txt.asc
+   ```
+3. GPG te pedirá tu contraseña para acceder a tu clave privada.
+4. El mensaje descifrado se mostrará en la terminal, junto con información sobre la validez de la firma.
+
+### Ejercicio adicional: Verificar la huella digital de una clave
+
+1. Para ver la huella digital de una clave, ejecuta:
+   ```
+   gpg --fingerprint email@ejemplo.com
+   ```
+2. Compara esta huella digital con la que te proporcione el dueño de la clave por un canal seguro para verificar la autenticidad de la clave.
+
+Recuerda: Nunca compartas tu clave privada y mantén segura tu contraseña.
 
 <!-- 
 # Ideas para trabajo opcional
