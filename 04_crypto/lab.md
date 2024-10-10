@@ -829,7 +829,8 @@ GPG es ampliamente utilizado para proteger correos electrónicos, archivos y com
 
 ### Ejercicio 3: Importar la clave pública de otra persona
 
-1. Supongamos que has recibido la clave pública de un amigo en un archivo llamado `clave_amigo.asc`.
+1. Supongamos que has recibido la clave pública de tu compañero/a de clase en un archivo llamado
+ `clave_amigo.asc`.
 2. Para importarla, ejecuta:
    ```
    gpg --import clave_amigo.asc
@@ -862,7 +863,7 @@ GPG es ampliamente utilizado para proteger correos electrónicos, archivos y com
    ```
 2. Compara esta huella digital con la que te proporcione el dueño de la clave por un canal seguro para verificar la autenticidad de la clave.
 
-Recuerda: Nunca compartas tu clave privada y mantén segura tu contraseña.
+
 
 <!-- 
 # Ideas para trabajo opcional
