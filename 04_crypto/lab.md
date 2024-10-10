@@ -855,14 +855,19 @@ GPG es ampliamente utilizado para proteger correos electrónicos, archivos y com
 3. GPG te pedirá tu contraseña para acceder a tu clave privada.
 4. El mensaje descifrado se mostrará en la terminal, junto con información sobre la validez de la firma.
 
-### Ejercicio adicional: Verificar la huella digital de una clave
-
-1. Para ver la huella digital de una clave, ejecuta:
+5. Puedes verificar la huella digital de una clave ejecutando:
    ```
-   gpg --fingerprint email@ejemplo.com
+   gpg --fingerprint email_amigo@ejemplo.com
    ```
-2. Compara esta huella digital con la que te proporcione el dueño de la clave por un canal seguro para verificar la autenticidad de la clave.
 
+Compara esta huella digital con la que te proporcione el dueño de la clave por un canal seguro para verificar la autenticidad de la clave (el dueño de la clave deberá ejecutar el mismo comando)
+
+
+6. Descarga la clave pública de juanan.pereira@ehu.eus:
+
+https://gist.github.com/juananpe/7bb6872d3408a5b194fb15cb03ce5834
+
+7. Crea un mensaje de texto ejercicioGPG.txt, con tu Nombre, Apellidos y dirección de correo electrónico. Cífralo y fírmalo con GPG para enviárselo a Juanan.
 
 
 <!-- 
