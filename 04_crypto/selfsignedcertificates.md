@@ -44,7 +44,7 @@ openssl genrsa -out client.key 2048
 
 2. Create a Certificate Signing Request (CSR) for the client:
 ```bash
-openssl req -new -key client.key -out client.csr -subj "/C=ES/ST=Eus/L=Donostia/O=ClienteOrg/OU=ClienteDept/CN=cliente.ejemplo.com"
+openssl req -new -key client.key -out client.csr -subj "/C=ES/ST=Eus/L=Donostia/O=ClienteOrg/OU=ClienteDept/CN=PEPE MUJICA"
 ```
 
 3. Use the CA to sign the client's CSR and generate the client certificate:
