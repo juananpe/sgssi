@@ -48,7 +48,7 @@ En la criptografía de clave secreta, el emisor y el receptor utilizan la misma 
 
 En criptografía, las funciones hash se usan para generar un "resumen" o "digest" de un mensaje. Estos resúmenes se pueden utilizar para verificar la integridad del mensaje, almacenar contraseñas e implementar firmas digitales.
 
-### Ejemplos de algorimos usados en criptografía
+### Ejemplos de algoritmos usados en criptografía
 
 * **DES (Data Encryption Standard):** Un algoritmo de cifrado de clave secreta que utiliza una clave de 56 bits. Es vulnerable a ataques de fuerza bruta.
 * **AES (Advanced Encryption Standard):** El sucesor de DES, que utiliza claves más largas (128 bits o más).
