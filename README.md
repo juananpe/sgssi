@@ -20,7 +20,7 @@
 2. [Backups](./02_backups/index.md)
 3. [Control de Acceso y Autenticación](./03_access/index.md)
 4. [Criptografía Aplicada](./04_crypto/index.md)
-5. [Seguridad en Redes](./05_networking/index.md)
+5. [Seguridad en Redes](./05_network/index.md)
 6. [Seguridad en Aplicaciones Web](./06_web/index.md)
 7. [Malware y Técnicas de Protección](./07_malware/index.md)
 8. [Ingeniería Inversa](./08_reversing/index.md)
