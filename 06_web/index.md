@@ -8,11 +8,11 @@ En este módulo aprenderemos a identificar y explotar vulnerabilidades comunes e
 
 La inyección de SQL es una vulnerabilidad común en aplicaciones web que permite a un atacante ejecutar comandos SQL arbitrarios en la base de datos subyacente. Esto puede llevar a la divulgación de información confidencial, la modificación de datos o incluso la eliminación de la base de datos completa.
 
-1. Introducción a SQLi [i](https://docs.google.com/presentation/d/1AfVt7QhVSpog1NQ6t-a4eIBTPFP6aqly3uQXjSrwjmk/edit?usp=sharing) 
+1. Introducción a SQLi [(i)](https://docs.google.com/presentation/d/1AfVt7QhVSpog1NQ6t-a4eIBTPFP6aqly3uQXjSrwjmk/edit?usp=sharing) 
 
-2. Introducción a SQLi [ii](https://docs.google.com/presentation/d/1Wc5U8rN1uK2zN-TigcXjfIayYSSEDPEIloMQngdl2tY/edit?usp=sharing)
+2. Introducción a SQLi [(ii)](https://docs.google.com/presentation/d/1Wc5U8rN1uK2zN-TigcXjfIayYSSEDPEIloMQngdl2tY/edit?usp=sharing)
 
-3. Introducción a SQLi [iii](https://docs.google.com/presentation/d/1EP06LEFwZrtOic4H7vEvfo3hQyg7Jds9Mv1M_YX1sUU/edit?usp=sharing)
+3. Introducción a SQLi [(iii)](https://docs.google.com/presentation/d/1EP06LEFwZrtOic4H7vEvfo3hQyg7Jds9Mv1M_YX1sUU/edit?usp=sharing)
 
 
 ## 2. Actividades
