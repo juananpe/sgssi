@@ -13,3 +13,6 @@ __Requisitos__: haz un fork de este repositorio y ábrelo en GitHub Codespaces
 
 ## Laboratorio de introducción
 [Enunciado](https://docs.google.com/document/d/16jxTQU0yw9VWX64jOrLjOVar4-_9p-hHffAbDDlqSmA/edit?tab=t.0)
+
+## Laboratorio con retos de reversing Elf, Jar y APK
+[Enunciado](https://docs.google.com/document/d/1jZnM-JKQbLrgzRjfporEbCCe2w4bqh7WB-N0rq6kRbs/edit?usp=sharing)
