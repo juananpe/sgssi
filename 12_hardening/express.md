@@ -63,8 +63,7 @@ A pesar de todas las protecciones establecidas en la Sección [2](# Consideracio
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        fruit: 
-         "require('child_process').exec('touch /tmp/test')"
+        jsonString: "require('child_process').exec('touch /tmp/test')"
       })
     })
 ```
