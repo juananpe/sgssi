@@ -27,7 +27,6 @@
 9. [Análisis Forense Digital](./09_forensics/index.md)
 10. [Ingeniería Social y Factor Humano](./10_social/index.md)
 11. [Aspectos Legales y Éticos](./11_legal/index.md)
-12. _Hardening_ de Aplicaciones Específicas: [Express](./12-hardening/express.md) 
 
 ## Tecnologías y Herramientas
 
@@ -44,7 +43,7 @@
 - Auditorías / Exploits: [Metasploit][metasploit]
 - Análisis de malware: [Virus Total][VirusTotal], [Any.Run][Any.Run]
 - Inyección de SQL: [sqlmap][sqlmap]
-- Auditorías / Crackeo de contraseñas: [JohnTheRipper][JohnTheRipper], [CookieMonster](https://github.com/DigitalInterruption/cookie-monster)
+- Auditorías / Crackeo de contraseñas: [JohnTheRipper][JohnTheRipper]
 
 ## Metodología
 
