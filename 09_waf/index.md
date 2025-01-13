@@ -13,4 +13,5 @@ El laboratorio está estructurado en varias fases, comenzando con la configuraci
 Para facilitar el aprendizaje, se ha desarrollado un repositorio en GitHub que contiene todos los recursos necesarios para llevar a cabo el laboratorio, incluyendo instrucciones detalladas y ejemplos prácticos. Con este enfoque, se busca proporcionar a los desarrolladores e investigadores el conocimiento y las habilidades necesarias para implementar y gestionar WAFs de manera efectiva, mejorando así la seguridad de las aplicaciones web en un entorno cada vez más amenazante.
 
 **Laboratorio:** https://github.com/gomezbc/WAF-101
+
 **Autores:** [Alex Rivas](https://github.com/AlexRivasMachin) y [Borja Gómez](https://github.com/gomezbc)
