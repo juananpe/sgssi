@@ -44,7 +44,9 @@
 - Auditorías / Exploits: [Metasploit][metasploit]
 - Análisis de malware: [Virus Total][VirusTotal], [Any.Run][Any.Run]
 - Inyección de SQL: [sqlmap][sqlmap]
-- Auditorías / Crackeo de contraseñas: [JohnTheRipper][JohnTheRipper], [CookieMonster](https://github.com/DigitalInterruption/cookie-monster)
+- Auditorías / Crackeo de contraseñas: [JohnTheRipper][JohnTheRipper]
+- WAF y protección de aplicaciones web: [ModSecurity][ModSecurity]
+
 
 ## Metodología
 
@@ -73,3 +75,4 @@ Para más detalles sobre la asignatura o su evaluación, consulta la [Guía Doce
 [Any.Run]: https://any.run
 [sqlmap]: https://sqlmap.org
 [JohnTheRipper]: https://www.openwall.com/john/
+[ModSecurity]: https://modsecurity.org
