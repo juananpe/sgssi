@@ -1,3 +1,6 @@
 [submodule "06_web/node_pentesting/NodeGoat"]
 	path = 06_web/node_pentesting/NodeGoat
 	url = https://github.com/OWASP/NodeGoat
+[submodule "VulnHunterAI"]
+	path = VulnHunterAI
+	url = https://github.com/asg0305/VulnHunterAI.git
